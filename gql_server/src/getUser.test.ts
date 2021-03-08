@@ -53,6 +53,7 @@ describe("Testing getting a user", () => {
 
         const result = queryResponse.data ? queryResponse.
             data.getUser : null;
+
         console.log("result", result);
         expect(result).toEqual({
             id: userId,
