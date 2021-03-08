@@ -10,11 +10,11 @@ import { addMockFunctionsToSchema } from "apollo-server-express";
 describe("Testing getting a user", () => {
     const GetUser = `
             query GetUser($id: ID!) {
-            getUser(id: $id) {
-            id
-            username
-            email
-            }
+                getUser(id: $id) {
+                id
+                username
+                email
+                }
             }`;
 
     // we first create our schema from the merger of typeDefs and
