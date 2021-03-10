@@ -1,8 +1,8 @@
-import typeDefs from "./typeDefs";
-import resolvers from "./resolvers";
+import typeDefs from "../typeDefs";
+import resolvers from "../resolvers";
 import { makeExecutableSchema } from "graphql-tools";
 import faker from "faker";
-import { testGraphQLQuery } from "./testGraphQLQuery";
+import { testGraphQLQuery } from "../testGraphQLQuery";
 import { addMockFunctionsToSchema } from "apollo-server-express";
 
 // set up our test using describe and then we create our query for getUser
