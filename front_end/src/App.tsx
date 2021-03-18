@@ -1,5 +1,6 @@
 import "./App.css"
-import LeftMenu from "./components/LeftMenu"
+
+import LeftMenu from "./components/areas/LeftMenu"
 import Main from "./components/Main"
 import Nav from "./components/Nav"
 import RightMenu from "./components/RightMenu"
