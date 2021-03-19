@@ -1,14 +1,14 @@
-import React from "react"
-import "./ErrorBoundary.css"
+import React from "react";
+import "./ErrorBoundary.css";
 
 interface ErrorBoundaryProps {
-  children: React.ReactNode[]
+  children: React.ReactNode[];
 }
 
 interface ErrorBoundaryState {
-  hasError: boolean
-  error: Error | null
-  info: object
+  hasError: boolean;
+  error: Error | null;
+  info: object;
 }
 
 class ErrorBoundary extends React.Component<
@@ -16,21 +16,21 @@ class ErrorBoundary extends React.Component<
   ErrorBoundaryState
 > {
   constructor(props: ErrorBoundaryProps) {
-    super(props)
+    super(props);
     this.state = {
       hasError: false,
       error: new Error(),
       info: { componentStack: "" },
-    }
+    };
   }
 
   static getDerivedStateFromError = (error: Error) => {
-    return { hasError: true }
-  }
+    return { hasError: true };
+  };
 
   componentDidCatch(error: Error | null, info: object) {
-    console.log("error", error)
-    this.setState({ hasError: true, error, info })
+    console.log("error", error);
+    this.setState({ hasError: true, error, info });
   }
 
   render() {
@@ -41,11 +41,11 @@ class ErrorBoundary extends React.Component<
             Something has gone wrong. Please reload your screen.
           </h2>
         </div>
-      )
+      );
     }
 
-    return this.props.children
+    return this.props.children;
   }
 }
 
-export default ErrorBoundary
+export default ErrorBoundary;

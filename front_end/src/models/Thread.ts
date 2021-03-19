@@ -14,5 +14,5 @@ export default class Thread {
     public lastModifiedOn: Date,
     public threadItems: Array<ThreadItem>,
     public category: Category
-  ) { }
+  ) {}
 }
