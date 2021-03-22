@@ -30,7 +30,7 @@ const Login: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
   }, [reduxDispatch])
 
   const onChangeUserName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch({ type: "userName", payload: e.target.value1 })
+    dispatch({ type: "userName", payload: e.target.value })
     if (!e.target.value) allowSubmit(dispatch, "Username cannot be empty", true)
     else allowSubmit(dispatch, "", false)
   }
