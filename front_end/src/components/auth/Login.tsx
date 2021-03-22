@@ -1,10 +1,10 @@
-import React, { FC, useReducer, useEffect } from "react";
-import ReactModal from "react-modal";
-import ModalProps from "../types/ModalProps";
-import userReducer from "./common/UserReducer";
-import { allowSubmit } from "./common/Helpers";
-import { useDispatch } from "react-redux";
-import { UserProfileSetType } from "../../store/user/Reducer";
+import React, { FC, useReducer, useEffect } from "react"
+import ReactModal from "react-modal"
+import ModalProps from "../types/ModalProps"
+import userReducer from "./common/UserReducer"
+import { allowSubmit } from "./common/Helpers"
+import { useDispatch } from "react-redux"
+import { UserProfileSetType } from "../../store/user/Reducer"
 
 const Login: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
   const [
@@ -15,8 +15,8 @@ const Login: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
     password: "",
     resultMsg: "",
     isSubmitDisabled: true,
-  });
-  const reduxDispatch = useDispatch();
+  })
+  const reduxDispatch = useDispatch()
 
   useEffect(() => {
     // todo: replace with GraphQL call
@@ -26,33 +26,31 @@ const Login: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
         id: 1,
         userName: "testUser",
       },
-    });
-  }, [reduxDispatch]);
+    })
+  }, [reduxDispatch])
 
   const onChangeUserName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch({ type: "userName", payload: e.target.value });
-    if (!e.target.value)
-      allowSubmit(dispatch, "Username cannot be empty", true);
-    else allowSubmit(dispatch, "", false);
-  };
+    dispatch({ type: "userName", payload: e.target.value1 })
+    if (!e.target.value) allowSubmit(dispatch, "Username cannot be empty", true)
+    else allowSubmit(dispatch, "", false)
+  }
 
   const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch({ type: "password", payload: e.target.value });
-    if (!e.target.value)
-      allowSubmit(dispatch, "Password cannot be empty", true);
-    else allowSubmit(dispatch, "", false);
-  };
+    dispatch({ type: "password", payload: e.target.value })
+    if (!e.target.value) allowSubmit(dispatch, "Password cannot be empty", true)
+    else allowSubmit(dispatch, "", false)
+  }
 
   const onClickLogin = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
-    onClickToggle(e);
-  };
+    e.preventDefault()
+    onClickToggle(e)
+  }
 
   const onClickCancel = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    onClickToggle(e);
-  };
+    onClickToggle(e)
+  }
 
   return (
     <ReactModal
@@ -102,7 +100,7 @@ const Login: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
         </div>
       </form>
     </ReactModal>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
